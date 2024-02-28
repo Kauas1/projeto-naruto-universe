@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>Projeto Naruto Universe</title>
 </head>
 <body>
@@ -16,19 +22,27 @@
             </a>
         </nav>
         <div class="form-img"> 
-            <h1>NARUTO UNIVERSE</h1>N
+            <div class="box"> 
+            <h1 class="nameProject">NARUTO UNIVERSE</h1>
             <img src="../images/Login-form.png" alt="imagem-naruto">   
         </div>
              
         <form class="form-login">
-            <div class="form"></div>
-            <h1>Login</h1>
+            <div class="Login">
+            <p class="Login-right">Login</p>
+        </div>
+            <div class="form-right"> 
             <label for="email">Email:</label>
-            <input type="text" name="user" id="user" placeholder="seuemail@email.com">
-            <label type="password">Senha:</label>
-            <input type="text" name="password" id="password" placeholder="Digite sua senha">
+            <input class="input" type="text" name="user" id="user" placeholder="seuemail@email.com">
+            <label for="password">Senha:</label>
+            <input class="input" type="password" name="password" id="password" placeholder="Digite sua senha">
+        </div>
+         <div class="btn-div">
             <button class="btn" id="login">Login</button>
+            <p> esqueceu sua senha? <strong>clique aqui </strong></p>
+        </div>
         </form>
+    </div>
     </main>
 
     <script src="../js/login.js" type="module"></script>

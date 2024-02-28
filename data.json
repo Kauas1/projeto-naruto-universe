@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "usuario": "carlos",
+    "usuario": "carlos@email.com",
     "senha": "123456"
   },
   {
     "id": 2,
-    "usuario": "igor",
+    "usuario": "igor@email.com",
     "senha": "654321"
   },
   {
     "id": 3,
-    "usuario": "leticia",
+    "usuario": "leticia@email.com",
     "senha": "123654"
   }
 ]
