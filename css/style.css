@@ -74,13 +74,14 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
-    background: url("../images/header.png");
+    background: url(../images/header.png);
     background-size: cover;
     width: 100%;
     height:  373px;
+    filter: brightness(50%);
 }
 
-.container{
+.container{ 
     position: relative;
 }
 
@@ -89,4 +90,16 @@ body{
 h1{
     position: absolute;
     font-size: 32px;
+    background: #A973C2;
+    background: linear-gradient(to bottom, #A973C2 37%, #FECA12 69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    stroke: black;
+}
+
+.character-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 57px;
 }
