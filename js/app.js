@@ -2,7 +2,7 @@
 // clans:  https://narutodb.xyz/api/clan,
 // village:   https://narutodb.xyz/api/village
 
-const page = 2;
+const page = 1;
 const baseURL = `https://narutodb.xyz/api/`;
 
 
