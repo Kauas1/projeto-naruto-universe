@@ -109,7 +109,7 @@ h1 {
     font-size: 32px; 
     background: #A973C2;
     background: linear-gradient(to bottom, #A973C2 40%, #fecb12 69%);
-    -webkit-background-clip: text;
+    
     -webkit-text-fill-color: transparent;
     font-family: "Kaushan Script";
 }
