@@ -302,3 +302,15 @@ a {
         gap: 10px;
     }
 }
+
+.person-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.person-data p {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

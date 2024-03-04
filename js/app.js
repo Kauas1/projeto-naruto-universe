@@ -1,43 +1,42 @@
-// characters: 'https://narutodb.xyz/api/character,
-// clans:  https://narutodb.xyz/api/clan,
-// village:   https://narutodb.xyz/api/village
 
-const page = 1;
-const baseURL = `https://narutodb.xyz/api/`;
-
-
+const baseURL = 'https://narutodb.xyz/api/';
 
 const loadCharacter = async () => {
-    const res = await fetch(`${baseURL}character?page=${page}`);
+    const res = await fetch(`${baseURL}character?limit=1431`);
     return await res.json();
-}
+};
 
-const loadVillage = async () => {
+const loadClan = async () => {
     const res = await fetch(`${baseURL}clan`);
     return await res.json();
-}
+};
 
-const loadEpisode = async () => {
+const loadVillage = async () => {
     const res = await fetch(`${baseURL}village`);
     return await res.json();
-}
+};
 
 const loadAllWithPromiseAll = async () => {
-    const [characters, clan, village] = await Promise.all([
-        loadCharacter(),
-        loadVillage(),
-        loadEpisode()
-    ]);
+    try {
+        const [characters, clans, villages] = await Promise.all([
+            loadCharacter(),
+            loadClan(),
+            loadVillage()
+        ]);
 
-    showCharacter(characters.characters);
-    // Showclan( clan.characters )
-    // ShowEpisodes( episode.characters)
-}
+        showCharacters(characters.characters);
+        // showClans(clans.clans);
+        // showVillages(villages.villages);
+    } catch (error) {
+        console.error('Erro ao carregar dados:', error);
+    }
+};
 
 loadAllWithPromiseAll();
 
-function showCharacter(character) {
-    const characterContainer = document.getElementById("character-container");
+function showCharacters(characters) {
+    const characterContainer = document.getElementById('character-container');
+
 
     characterContainer.innerHTML = '';
 
@@ -45,33 +44,33 @@ function showCharacter(character) {
     gridContainer.classList.add('character-grid');
     characterContainer.appendChild(gridContainer);
 
-    character.forEach((characters) => {
+    characters.forEach((character, index) => {
         const divCharacterElement = document.createElement('div');
-        divCharacterElement.id = `Character${characters.id}`;
+        divCharacterElement.id = `Character${character.id}`;
 
-        let affiliation = characters.personal.affiliation;
-        let clan = characters.personal.clan;
+        let affiliation = character.personal.affiliation;
+        let clan = character.personal.clan;
 
         divCharacterElement.innerHTML = `
             <div class="container-character">
                 <div class="character-info">
-                   // <img src="${characters.images[0]}" alt="${characters.name}'s Image not found">
+                    <img src="${character.images[0]}" alt="${character.name}'s Image not found">
                     <div class="box-info">
-                        <li>
-                            <span class="nome-Personagem">Nome: ${characters.name}</span>
+                        <li>    
+                            <span class="nome-Personagem">Nome:${character.name} </span>
                         </li>
                         <li>
                             <span class="location">Afiliações:</span>
-                            <a href="https://narutodb.xyz/api/village/search?name=${affiliation}">
-                                <span style="${affiliation === undefined ? 'color: red;' : ''}">
-                                    ${affiliation === undefined ? 'Unknown' : affiliation}
+                            <a href="${affiliation ? `https://narutodb.xyz/api/village/search?name=${affiliation}` : '#'}">
+                                <span style="${!affiliation ? 'color: red;' : ''}">
+                                    ${affiliation || 'Unknown'}
                                 </span>
                             </a>
                         </li>
                         <li>
                             <span class="clan">Clan: </span>
-                            <a href="https://narutodb.xyz/api/clan/search?name=${clan}" style="${clan === undefined ? 'color: red;' : ''}">
-                                ${clan === undefined ? 'Unknown' : clan}
+                            <a href="${clan ? `https://narutodb.xyz/api/clan/search?name=${clan}` : '#'}" style="${!clan ? 'color: red;' : ''}">
+                                ${clan || 'Unknown'}
                             </a>
                         </li>
                     </div>
@@ -79,7 +78,16 @@ function showCharacter(character) {
             </div>
         `;
 
+        divCharacterElement.addEventListener('click', () => {
+            createLinkHref(index)
+        })
+
         gridContainer.appendChild(divCharacterElement);
     });
+
+    function createLinkHref(id) {
+        window.location.href = `../pages/person.html?id=${id}`
+    }
 }
+
 

@@ -11,8 +11,12 @@ btn.addEventListener('click', (event) =>{
     const login = data.find((obj)=> obj.usuario === user && obj.senha === password)
 
     if(login){
-        window.location = '../index.html'
+        window.location = './home.html'
     }else{
         alert('Usuário não encontrado')
     }
+})
+
+document.getElementById('way-home').addEventListener('click', () => {
+    window.location.href = './pages/home.html'
 })
