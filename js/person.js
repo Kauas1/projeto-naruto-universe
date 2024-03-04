@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch((err) => console.log(err));
 
+
+
     function showCharacterDetails(character) {
         const personagemImg = document.querySelector('.person-img');
         const nome = document.querySelector('.name');
@@ -28,12 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const kekkeiMōraValue = document.querySelector('.kekkeiMōra-value');
         const affiliationValue = document.querySelector('.affiliation-value');
         
-        
+       
         personagemImg.src = character.images[0];
         nome.innerHTML = ` ${character.name}`;
+        alturaValue.textContent = `${character.personal.height}`
         jutsuValue.innerHTML = ` ${character.jutsu}`;
         natureTypeValue.innerHTML = ` ${character.personal.natureType}`;
         kekkeiMōraValue.innerHTML = ` ${character.personal.kekkeiMōra}`;
         affiliationValue.innerHTML = ` ${character.personal.affiliation}`;
-    }
+
+   
+
+}
 });
+
+

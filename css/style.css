@@ -250,8 +250,13 @@ li {
     flex-direction: column;
     background-color: var(--gray-light);
     background-size: cover;
-    min-height: 250px; /* Altura mínima padrão */
+    min-height: 250px; 
     font-size: 18px;
+    cursor: pointer;
+}
+
+.character-info:hover {
+    box-shadow: 0 0 20px var(--purple);
 }
 
 .character-info img {
@@ -313,4 +318,53 @@ a {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.persons-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 1000px 1000px 100px;
+    font-family: "Kaushan Script";
+    color: var(--white);
+    justify-content: center;
+  
+}
+
+.person-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-bottom: 20px; 
+}
+.person-data {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.name {
+    font-size: 24px;
+    margin-bottom: 10px;
+    
+}
+
+p {
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    .persons-info {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .person-img {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+}
+
+.height-value, .jutsu-value, .natureType-value, .kekkeiMōra-value, .affiliation-value{
+    color:var(--yellow-dark);
 }
