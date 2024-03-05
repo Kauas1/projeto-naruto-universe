@@ -302,6 +302,102 @@ li {
         width: 120px;
         font-size: 18px;
         height: 40px;
-   
+    }
+
+    .character-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 10px;
+    }
+}
+
+.person-data {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.person-data p {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.persons-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    font-family: "Kaushan Script";
+    color: var(--white);
+    justify-content: center;
+}
+
+.person-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.person-data {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    .persons-info {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .person-img {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+}
+
+.height-value,
+.jutsu-value,
+.natureType-value,
+.kekkeiMōra-value,
+.affiliation-value {
+    color: var(--yellow-dark);
+}
+
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+
+    .form-login {
+        width: 100%;
+    }
+
+    .form-right input {
+        margin: 0px 10px;
+    }
+
+    .btn-div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .persons-info {
+        margin: 20px 10px;
+    }
+
+    h1.nameProject {
+        font-size: 8px;
     }
 }
